@@ -1,0 +1,5 @@
+int c = 5;
+printf("%d\n",++c );//prints 6 after adding 1 to c 
+printf("%d\n",c++ ); //prints 5 but adds 1 to c
+
+for more notes check out the intro.c file
