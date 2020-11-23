@@ -106,33 +106,100 @@
 // 	return 0;
 // }
 
+// int main()
+// {
+// 	int low,high,i,flag;
+// 	printf("Enter min number: ");
+// 	scanf("%d",&low);
+// 	printf("Enter max number: ");
+// 	scanf("%d",&high);
+// 	printf("Prime numbers between %d and %d are: \n", low,high);
+// 	while (low < high){
+// 		flag = 0;
+// 		if (low <= 1){
+// 			++low;
+// 			continue;
+// 		}
+// 		for (i = 2;i < low/2;++i){
+// 			//printf("entered%d ",i);
+// 			if (low % i==0){
+// 				flag = 1;
+// 				break;
+// 			}
+// 		}
+// 		if (flag == 0)
+// 			printf(" %d", low);
+
+// 		++low;
+// 	}
+// 	printf("\n");
+// 	return 0;
+// }
+
+
+// int main()
+// {
+//    int i, x;
+//    char str[100];
+
+//    printf("\nPlease enter a string:\t");
+//    scanf("%s",&str);
+
+//    printf("\nPlease choose following options:\n");
+//    printf("1 = Encrypt the string.\n");
+//    printf("2 = Decrypt the string.\n");
+//    scanf("%d", &x);
+
+//    //using switch case statements
+//    switch(x)
+//    {
+//    case 1:
+//       for(i = 0; (i < 100 && str[i] != '\0'); i++)
+//         str[i] = str[i] + 3; //the key for encryption is 3 that is added to ASCII value
+//       printf("\nEncrypted string: %s\n", str);
+//       break;
+
+//    case 2:
+//       for(i = 0; (i < 100 && str[i] != '\0'); i++)
+//         str[i] = str[i] - 3; //the key for encryption is 3 that is subtracted to ASCII value
+
+//       printf("\nDecrypted string: %s\n", str);
+//       break;
+
+//    default:
+//       printf("\nError\n");
+//    }
+//    return 0;
+// }
+
 int main()
 {
-	int low,high,i,flag;
-	printf("Enter min number: ");
-	scanf("%d",&low);
-	printf("Enter max number: ");
-	scanf("%d",&high);
-	printf("Prime numbers between %d and %d are: \n", low,high);
-	while (low < high){
-		flag = 0;
-		if (low <= 1){
-			++low;
-			continue;
-		}
-		for (i = 2;i < low/2;++i){
-			//printf("entered%d ",i);
-			if (low % i==0){
-				flag = 1;
-				break;
-			}
-		}
-		if (flag == 0)
-			printf(" %d\n", low);
+	int n;
+	printf("Enter a number: ");
+	scanf("%d",&n);
+	 // Print the number of 2s that divide n 
+    while (n%2 == 0) 
+    { 
+        printf("%d ", 2); 
+        n = n/2; 
+    } 
+  
+    // n must be odd at this point.  So we can skip  
+    // one element (Note i = i +2) 
+    for (int i = 3; i <= sqrt(n); i = i+2) 
+    { 
+        // While i divides n, print i and divide n 
+        while (n%i == 0) 
+        { 
+            printf("%d ", i); 
+            n = n/i; 
+        } 
+    } 
+  
+    // This condition is to handle the case when n  
+    // is a prime number greater than 2 
+    if (n > 2) 
+        printf ("%d", n); 
+    printf("%s\n");
+} 
 
-		++low;
-	}
-	printf("\n");
-}
-
-//is 3 less than or equal to : 4.5?
